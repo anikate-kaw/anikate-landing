@@ -4,111 +4,98 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Personal Landing Page</title>
-    <meta name="description" content="A simple personal landing page + blog." />
+    <meta name="description" content="A simple personal landing page and blog." />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="field" aria-hidden="true"></div>
-    <div class="scanlines" aria-hidden="true"></div>
-
     <div class="wrap">
       <div class="topbar">
-        <div class="left">
-          <span class="badge">SYS</span>
-          <span class="muted">personal://landing</span>
+        <div class="brand">
+          <div class="pixel-dot" aria-hidden="true"></div>
+          <div>
+            <div class="small">SYSTEM</div>
+            <div><strong>PERSONAL_HOMEPAGE</strong></div>
+          </div>
         </div>
-        <div class="right muted">
-          <span>STATUS: OK</span>
-        </div>
+        <nav class="nav" aria-label="Site">
+          <a href="#posts">POSTS</a>
+          <a href="#about">ABOUT</a>
+          <a href="#contact">CONTACT</a>
+        </nav>
       </div>
 
-      <div class="row">
-        <section class="window">
-          <div class="titlebar">
-            <span>HOME</span>
-            <span class="muted">v0.1</span>
-          </div>
-          <div class="body">
-            <p class="muted">Hello — I’m</p>
-            <h1 class="h1">YOUR NAME</h1>
-            <p class="muted">
-              Placeholder landing page. Minimal text, tiny blog, and an 8-bit field background.
-              We’ll swap in your bio, links, and voice later.
+      <header class="frame">
+        <div class="grid">
+          <div>
+            <p class="kicker">BOOT SEQUENCE</p>
+            <h1>YOUR NAME</h1>
+            <p class="subtitle">
+              Generic placeholder. Simple, text-forward UI. We’ll add your real bio and links later.
             </p>
-
-            <div class="btns">
-              <a class="btn" href="#posts">OPEN: POSTS</a>
-              <a class="btn" href="#contact">OPEN: CONTACT</a>
-              <a class="btn" href="#about">OPEN: ABOUT</a>
+            <div class="buttons">
+              <a class="btn primary" href="#posts">OPEN_LOG</a>
+              <a class="btn" href="#contact">PING</a>
             </div>
-
-            <hr class="hr" />
-
-            <p class="muted">
-              Tip: press <span class="kbd">CTRL</span> + <span class="kbd">F</span> to search this page.
+            <div class="hr"></div>
+            <p class="small">
+              Topics (temporary): systems · technology · writing
             </p>
           </div>
-        </section>
 
-        <aside class="window" id="about">
-          <div class="titlebar">
-            <span>ABOUT</span>
-            <span class="muted">(editable later)</span>
-          </div>
-          <div class="body">
-            <ul class="list">
-              <li><span class="muted">Location:</span> (optional)</li>
-              <li><span class="muted">Work:</span> (optional)</li>
-              <li><span class="muted">Currently:</span> (optional)</li>
+          <aside class="panel" id="about">
+            <h2>ABOUT.txt</h2>
+            <p>
+              This is a single-page landing + lightweight “blog cards” section.
+              No build step. Fast to edit. Easy to deploy.
+            </p>
+            <ul>
+              <li><strong>Location:</strong> (optional)</li>
+              <li><strong>Work:</strong> (optional)</li>
+              <li><strong>Currently:</strong> (optional)</li>
             </ul>
-            <hr class="hr" />
-            <p class="muted">
-              This design is intentionally generic.
-              Next step: replace “YOUR NAME”, topics, and link targets.
+            <div class="hr"></div>
+            <p class="small">STATUS: placeholder</p>
+          </aside>
+        </div>
+      </header>
+
+      <main class="frame section" id="posts">
+        <div class="section-title">
+          <span>POSTS.log</span>
+        </div>
+        <div class="posts">
+          <article class="post">
+            <h3>WELCOME</h3>
+            <p class="date">Feb 2026</p>
+            <p class="small">
+              Placeholder entry. Replace this with your first real post.
             </p>
-          </div>
-        </aside>
-      </div>
+          </article>
+          <article class="post">
+            <h3>NOTES_ON_BUILDING</h3>
+            <p class="date">Feb 2026</p>
+            <p class="small">
+              Placeholder entry #2. Later we can switch to Markdown-driven posts if you want.
+            </p>
+          </article>
+        </div>
+      </main>
 
-      <section class="window" id="posts" style="margin-top:14px;">
-        <div class="titlebar">
-          <span>POSTS</span>
-          <span class="muted">latest</span>
+      <section class="frame section" id="contact">
+        <div class="section-title">
+          <span>CONTACT.net</span>
         </div>
-        <div class="body">
-          <div class="posts">
-            <article class="post">
-              <div class="muted">[2026-02] ENTRY_0001</div>
-              <div>Welcome.</div>
-              <div class="muted">This is placeholder text. Replace with your first real post.</div>
-            </article>
-            <article class="post">
-              <div class="muted">[2026-02] ENTRY_0002</div>
-              <div>Notes on building.</div>
-              <div class="muted">Later we can move posts to Markdown + a static generator if you want.</div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="window" id="contact" style="margin-top:14px;">
-        <div class="titlebar">
-          <span>CONTACT</span>
-          <span class="muted">links</span>
-        </div>
-        <div class="body">
-          <p class="muted">Wire these to your real accounts later:</p>
-          <div class="btns">
-            <a class="btn" href="#">EMAIL</a>
-            <a class="btn" href="#">X</a>
-            <a class="btn" href="#">GITHUB</a>
-            <a class="btn" href="#">LINKEDIN</a>
-          </div>
+        <p class="small">Add your preferred contact methods here.</p>
+        <div class="buttons">
+          <a class="btn" href="#">EMAIL</a>
+          <a class="btn" href="#">X</a>
+          <a class="btn" href="#">GITHUB</a>
+          <a class="btn" href="#">LINKEDIN</a>
         </div>
       </section>
 
       <footer class="footer">
-        <div class="muted">© <span id="year"></span> YOUR NAME · built as a simple static page</div>
+        <p>© <span id="year"></span> YOUR NAME · rendered in plain HTML/CSS</p>
       </footer>
     </div>
 
