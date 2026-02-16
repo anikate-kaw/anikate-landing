@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Personal Landing Page</title>
+    <meta name="description" content="A simple personal landing page and blog." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="wrap">
+      <div class="hero">
+        <div>
+          <p class="kicker">Hello — I’m</p>
+          <h1>Your Name</h1>
+          <p class="subtitle">
+            I write about ideas, work, and whatever I’m learning. This page is a placeholder —
+            we’ll add details later.
+          </p>
+          <div class="cta">
+            <a class="button" href="#posts">Read the blog</a>
+            <a class="button ghost" href="#contact">Contact</a>
+          </div>
+          <p class="meta">
+            Topics (for now): technology · systems · writing
+          </p>
+        </div>
+        <div class="card">
+          <h2>About</h2>
+          <p>
+            This is a clean, fast, single-page site with a tiny “blog” section.
+            It’s intentionally generic so we can swap in your bio, links, and voice later.
+          </p>
+          <ul>
+            <li><strong>Location:</strong> (optional)</li>
+            <li><strong>Work:</strong> (optional)</li>
+            <li><strong>Currently:</strong> (optional)</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section id="posts" class="section">
+        <h2>Latest posts</h2>
+        <div class="posts">
+          <article class="post">
+            <h3>Welcome</h3>
+            <p class="date">Feb 2026</p>
+            <p>
+              This is a placeholder post. Replace this with your first real entry.
+            </p>
+          </article>
+          <article class="post">
+            <h3>Notes on building</h3>
+            <p class="date">Feb 2026</p>
+            <p>
+              A second placeholder post. Later we can switch this to a real blog system
+              (Markdown → static build) if you want.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>
+          Add your preferred contact methods here.
+        </p>
+        <div class="links">
+          <a href="#">Email</a>
+          <a href="#">X / Twitter</a>
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wrap footer">
+      <p>© <span id="year"></span> Your Name. Built with simple HTML/CSS.</p>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
