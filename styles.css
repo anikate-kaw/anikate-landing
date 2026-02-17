@@ -6,8 +6,8 @@
   --border: rgba(60, 255, 102, 0.32);
   --shadow: 0 10px 34px rgba(0,0,0,0.45);
 
-  /* 8-bit-ish sizing */
-  --px: 4px;
+  /* 8-bit-ish sizing (chunkier pixels) */
+  --px: 8px;
 }
 
 * { box-sizing: border-box; }
@@ -19,41 +19,71 @@ html, body {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   line-height: 1.5;
   background: #06110a;
+
+  /* make edges feel more "pixel" */
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
 }
 
 /* Pixelated background (green field) */
 body {
   background:
-    /* subtle glow (cleaner) */
-    radial-gradient(900px 600px at 30% 10%, rgba(60,255,102,0.12), transparent 60%),
-    radial-gradient(900px 600px at 80% 30%, rgba(60,255,102,0.06), transparent 62%),
+    /* chunkier glow */
+    radial-gradient(820px 540px at 30% 10%, rgba(60,255,102,0.14), transparent 62%),
+    radial-gradient(820px 540px at 80% 30%, rgba(60,255,102,0.08), transparent 65%),
 
-    /* softened pixel grid */
-    linear-gradient(rgba(0,0,0,0.14), rgba(0,0,0,0.14)),
+    /* scanlines */
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.10) 0,
+      rgba(0,0,0,0.10) 1px,
+      rgba(0,0,0,0.00) 1px,
+      rgba(0,0,0,0.00) 4px
+    ),
+
+    /* hard pixel grid (bigger cells) */
     repeating-linear-gradient(0deg,
       rgba(0,0,0,0.0) 0,
-      rgba(0,0,0,0.0) calc(var(--px) * 4),
-      rgba(0,0,0,0.035) calc(var(--px) * 4),
-      rgba(0,0,0,0.035) calc(var(--px) * 5)
+      rgba(0,0,0,0.0) calc(var(--px) * 2),
+      rgba(0,0,0,0.06) calc(var(--px) * 2),
+      rgba(0,0,0,0.06) calc(var(--px) * 2 + 1px)
     ),
     repeating-linear-gradient(90deg,
       rgba(0,0,0,0.0) 0,
-      rgba(0,0,0,0.0) calc(var(--px) * 4),
-      rgba(0,0,0,0.035) calc(var(--px) * 4),
-      rgba(0,0,0,0.035) calc(var(--px) * 5)
+      rgba(0,0,0,0.0) calc(var(--px) * 2),
+      rgba(0,0,0,0.06) calc(var(--px) * 2),
+      rgba(0,0,0,0.06) calc(var(--px) * 2 + 1px)
     ),
 
     /* field tiles */
     repeating-linear-gradient(0deg,
-      #083b1e 0,
-      #083b1e calc(var(--px) * 14),
-      #0a4523 calc(var(--px) * 14),
-      #0a4523 calc(var(--px) * 28)
+      #07361b 0,
+      #07361b calc(var(--px) * 10),
+      #0a4623 calc(var(--px) * 10),
+      #0a4623 calc(var(--px) * 20)
     );
 
   image-rendering: pixelated;
 }
 
+/* CRT-ish overlay (noise + vignette) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(1200px 800px at 50% 20%, rgba(0,0,0,0.0), rgba(0,0,0,0.35) 70%),
+    repeating-linear-gradient(90deg,
+      rgba(255,255,255,0.010) 0,
+      rgba(255,255,255,0.010) 1px,
+      rgba(0,0,0,0.0) 1px,
+      rgba(0,0,0,0.0) 3px
+    );
+  mix-blend-mode: overlay;
+  opacity: 0.55;
+}
 a { color: var(--text); }
 
 a:hover { color: white; }
